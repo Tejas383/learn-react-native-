@@ -1,5 +1,6 @@
 import { Button, Text, View } from 'react-native';
 import UserData from './components/UserData';
+import { useState } from 'react';
 
 function App() {
   const name = 'Tejasvita';
@@ -12,6 +13,14 @@ function App() {
 
   const press = val => {
     console.warn('button pressed: ' + val);
+  };
+
+  const [data, setData] = useState('name1');
+  let data2 = 'name2';
+
+  const update = () => {
+    data2 = 'updatedName2';
+    setData('updatedName1');
   };
 
   return (
@@ -39,6 +48,10 @@ function App() {
         title="On Press 2"
         onPress={() => press('helloooo')}
       />
+
+      <Text>{data}</Text>
+      <Text>{data2}</Text>
+      <Button title="update name" onPress={update} />
     </View>
   );
 }
