@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, ScrollView, TextInput } from 'react-native';
 import UserData from './components/UserData';
 import User from './components/User';
+import Form from './components/Form';
 import { useState } from 'react';
 import exStyles from './style';
 
@@ -102,6 +103,8 @@ function App() {
         onChangeText={text => setInputName(text)}
       />
       <Button title="clear text input" onPress={() => setInputName('')} />
+
+      <Form />
     </ScrollView>
   );
 }
