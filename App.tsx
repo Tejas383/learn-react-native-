@@ -1,4 +1,5 @@
 import { Button, Text, View } from 'react-native';
+import UserData from './components/UserData';
 
 function App() {
   const name = 'Tejasvita';
@@ -28,19 +29,5 @@ function App() {
     </View>
   );
 }
-
-// we can have multiple components in a file
-const UserData = () => {
-  return (
-    <View>
-      <Text style={{ fontSize: 15 }}>Name : Tejasvita</Text>
-      <Text style={{ fontSize: 15 }}>Age : 21</Text>
-      <Text style={{ fontSize: 15 }}>Gender : Female</Text>
-    </View>
-  );
-};
-// components can be nested
-
-// but, it is better to keep components inside a components folder
 
 export default App;
