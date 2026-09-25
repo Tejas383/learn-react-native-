@@ -1,7 +1,8 @@
-import { Button, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import UserData from './components/UserData';
 import User from './components/User';
 import { useState } from 'react';
+import exStyles from './style';
 
 function App() {
   const name = 'Tejasvita';
@@ -62,8 +63,43 @@ function App() {
       <Text style={{ fontSize: 30 }}>Props</Text>
       <User name={name1} age={age1} />
       <Button title="update name" onPress={() => setname1('peter')} />
+
+      {/* inline style */}
+      <Text style={{ fontSize: 30, color: 'red', backgroundColor: 'green' }}>
+        Styles in react-native
+      </Text>
+      {/* external style */}
+      <Text style={exStyles.textBox}>Styles in react-native</Text>
+      {/* multiple styles */}
+      <Text
+        style={[
+          exStyles.textBox,
+          inStyles.textBox,
+          { backgroundColor: 'black' },
+        ]}
+      >
+        Styles in react-native
+      </Text>
+      {/* internal style */}
+      <Text style={inStyles.textBox}>Styles in react-native</Text>
+      <Text style={inStyles.textBox}>Styles in react-native</Text>
     </View>
   );
 }
+
+// internal style
+const inStyles = StyleSheet.create({
+  textBox: {
+    fontSize: 25,
+    color: 'blue',
+    backgroundColor: 'lightblue',
+    padding: 10,
+    margin: 5,
+    borderRadius: 30,
+    borderColor: 'black',
+    borderWidth: 1,
+    height: 100,
+  },
+});
 
 export default App;
