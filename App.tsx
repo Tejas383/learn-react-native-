@@ -1,5 +1,6 @@
 import { Button, Text, View } from 'react-native';
 import UserData from './components/UserData';
+import User from './components/User';
 import { useState } from 'react';
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
     data2 = 'updatedName2';
     setData('updatedName1');
   };
+
+  // props
+  const [name1, setname1] = useState('Bruce');
+  const age1 = 10;
 
   return (
     <View>
@@ -52,6 +57,11 @@ function App() {
       <Text>{data}</Text>
       <Text>{data2}</Text>
       <Button title="update name" onPress={update} />
+
+      {/* props */}
+      <Text style={{ fontSize: 30 }}>Props</Text>
+      <User name={name1} age={age1} />
+      <Button title="update name" onPress={() => setname1('peter')} />
     </View>
   );
 }
