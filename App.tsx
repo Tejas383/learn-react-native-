@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, ScrollView, TextInput } from 'react-native';
 import UserData from './components/UserData';
 import User from './components/User';
 import { useState } from 'react';
@@ -29,8 +29,10 @@ function App() {
   const [name1, setname1] = useState('Bruce');
   const age1 = 10;
 
+  const [inputName, setInputName] = useState('');
+
   return (
-    <View>
+    <ScrollView>
       <Text style={{ fontSize: 30 }}>Hello from react native</Text>
       <Button title="Press me" />
       <Button title="Press me too" />
@@ -83,7 +85,24 @@ function App() {
       {/* internal style */}
       <Text style={inStyles.textBox}>Styles in react-native</Text>
       <Text style={inStyles.textBox}>Styles in react-native</Text>
-    </View>
+
+      {/* handling text input */}
+      <Text style={{ fontSize: 40 }}>Handle Text Input</Text>
+      <Text>Entered name is : {inputName}</Text>
+      <TextInput
+        placeholder="enter your name"
+        style={{
+          borderRadius: 5,
+          borderColor: 'black',
+          borderWidth: 2,
+          padding: 5,
+          margin: 5,
+        }}
+        value={inputName}
+        onChangeText={text => setInputName(text)}
+      />
+      <Button title="clear text input" onPress={() => setInputName('')} />
+    </ScrollView>
   );
 }
 
