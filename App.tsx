@@ -1,4 +1,5 @@
 import { Button, StyleSheet, Text, ScrollView, TextInput } from 'react-native';
+import { useState } from 'react';
 import UserData from './components/UserData';
 import User from './components/User';
 import Form from './components/Form';
@@ -8,7 +9,7 @@ import DynamicGrid from './components/DynamicGrid';
 import ComponentWithLoop from './components/ComponentWithLoop';
 import ListWithSectionList from './components/ListWithSectionList';
 import UseEffectHook from './components/UseEffectHook';
-import { useState } from 'react';
+import ShowHideComponent from './components/ShowHideComponent';
 import exStyles from './style';
 
 function App() {
@@ -122,6 +123,7 @@ function App() {
       <ListWithSectionList />
 
       <UseEffectHook />
+      <ShowHideComponent />
     </ScrollView>
   );
 }

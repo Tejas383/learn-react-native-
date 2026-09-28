@@ -12,7 +12,7 @@ const User2 = props => {
 
   return (
     <View>
-      <Text>data : {props.info.count}</Text>
+      <Text>count : {props.info.count}</Text>
       <Text>data : {props.info.data}</Text>
     </View>
   );
