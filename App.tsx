@@ -6,6 +6,7 @@ import ListWithFlatList from './components/ListWithFlatList';
 import StaticGrid from './components/StaticGrid';
 import DynamicGrid from './components/DynamicGrid';
 import ComponentWithLoop from './components/ComponentWithLoop';
+import ListWithSectionList from './components/ListWithSectionList';
 import { useState } from 'react';
 import exStyles from './style';
 
@@ -116,6 +117,8 @@ function App() {
       <DynamicGrid />
 
       <ComponentWithLoop />
+
+      <ListWithSectionList />
     </ScrollView>
   );
 }
