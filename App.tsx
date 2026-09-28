@@ -11,6 +11,7 @@ import ListWithSectionList from './components/ListWithSectionList';
 import UseEffectHook from './components/UseEffectHook';
 import ShowHideComponent from './components/ShowHideComponent';
 import ResponsiveUIusingFlex from './components/ResponsiveUIusingFlex';
+import StyleWithButton from './components/StyleWithButton';
 import exStyles from './style';
 
 function App() {
@@ -127,6 +128,8 @@ function App() {
       <ShowHideComponent />
 
       <ResponsiveUIusingFlex />
+
+      <StyleWithButton />
     </ScrollView>
   );
 }
