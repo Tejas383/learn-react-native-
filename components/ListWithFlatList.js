@@ -26,3 +26,7 @@ const ListWithFlatList = () => {
 };
 
 export default ListWithFlatList;
+
+// we can also use map function as in react, but, it is better to use flat list, because ,
+// 1. it provides a number of functionalities (like header and footer)
+// 2. map loads the complete list, and might hang when the length of the list increases. flatlist removes the extra elements from the ui. it allows lazy loading
