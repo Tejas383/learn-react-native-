@@ -3,6 +3,7 @@ import UserData from './components/UserData';
 import User from './components/User';
 import Form from './components/Form';
 import ListWithFlatList from './components/ListWithFlatList';
+import StaticGrid from './components/StaticGrid';
 import { useState } from 'react';
 import exStyles from './style';
 
@@ -108,6 +109,8 @@ function App() {
       <Form />
 
       <ListWithFlatList />
+
+      <StaticGrid />
     </ScrollView>
   );
 }
