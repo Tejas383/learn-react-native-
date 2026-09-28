@@ -12,6 +12,7 @@ import UseEffectHook from './components/UseEffectHook';
 import ShowHideComponent from './components/ShowHideComponent';
 import ResponsiveUIusingFlex from './components/ResponsiveUIusingFlex';
 import StyleWithButton from './components/StyleWithButton';
+import RadioButton from './components/RadioButton';
 import exStyles from './style';
 
 function App() {
@@ -130,6 +131,7 @@ function App() {
       <ResponsiveUIusingFlex />
 
       <StyleWithButton />
+      <RadioButton />
     </ScrollView>
   );
 }
