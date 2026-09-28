@@ -7,6 +7,7 @@ import StaticGrid from './components/StaticGrid';
 import DynamicGrid from './components/DynamicGrid';
 import ComponentWithLoop from './components/ComponentWithLoop';
 import ListWithSectionList from './components/ListWithSectionList';
+import UseEffectHook from './components/UseEffectHook';
 import { useState } from 'react';
 import exStyles from './style';
 
@@ -119,6 +120,8 @@ function App() {
       <ComponentWithLoop />
 
       <ListWithSectionList />
+
+      <UseEffectHook />
     </ScrollView>
   );
 }
