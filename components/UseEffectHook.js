@@ -26,6 +26,10 @@ const UseEffectHook = () => {
   // happens only when items in dependency array change
   // similar to compoenentDidUpdate in class component
 
+  // useEffect hook on unmount in ShowHideComponent
+  // it is used , because , functions like setInterval , setTimeOut work in the background,
+  // so to prevent them from running in the bg, we need to cleanup (use clearInterval, clearTimeout when unmounting the component)
+
   return (
     <View>
       <Text style={{ fontSize: 40 }}>Use Effect Hook</Text>
