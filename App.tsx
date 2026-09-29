@@ -14,6 +14,7 @@ import ResponsiveUIusingFlex from './components/ResponsiveUIusingFlex';
 import StyleWithButton from './components/StyleWithButton';
 import StaticRadioButton from './components/StaticRadioButton';
 import DynamicRadioButton from './components/DynamicRadioButton';
+import LoadingState from './components/LoadingState';
 import exStyles from './style';
 
 function App() {
@@ -135,6 +136,8 @@ function App() {
       <Text style={{ fontSize: 40 }}>Static Radio Button</Text>
       <StaticRadioButton />
       <DynamicRadioButton />
+
+      <LoadingState />
     </ScrollView>
   );
 }
