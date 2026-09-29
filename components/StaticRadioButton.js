@@ -6,7 +6,7 @@ const RadioButton = () => {
 
   return (
     <View>
-      <Text style={{ fontSize: 40 }}>Radio Buttons</Text>
+      <Text style={{ fontSize: 30 }}>Static Radio Button</Text>
 
       <View style={styles.main}>
         <TouchableOpacity onPress={() => setSelected(1)}>
