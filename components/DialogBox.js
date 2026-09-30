@@ -8,7 +8,7 @@ const DialogBox = () => {
     <View>
       <Text style={{ fontSize: 40 }}>Modal</Text>
 
-      <Modal transparent={true} visible={show} animationType="slide">
+      <Modal transparent={false} visible={show} animationType="slide">
         <View style={styles.main}>
           <View style={styles.box}>
             <Text style={styles.text}>Hello, I am a MODAL</Text>
