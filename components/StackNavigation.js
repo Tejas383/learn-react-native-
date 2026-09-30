@@ -9,8 +9,31 @@ const StackNavigation = () => {
   return (
     <NavigationContainer>
       {/* bun add @react-navigation/native-stack */}
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: 'red',
+          },
+          headerTintColor: 'yellow',
+          headerTitleStyle: {
+            fontSize: 30,
+          },
+        }}
+      >
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            title: 'USER LOGIN',
+            headerStyle: {
+              backgroundColor: 'magenta',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontSize: 25,
+            },
+          }}
+        />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
