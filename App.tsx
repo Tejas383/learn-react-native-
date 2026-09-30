@@ -18,6 +18,7 @@ import LoadingState from './components/LoadingState';
 import DialogBox from './components/DialogBox';
 import PressableButton from './components/PressableButton';
 import ChangeStatusBar from './components/ChangeStatusBar';
+import PlatformDetails from './components/PlatformDetails';
 import exStyles from './style';
 
 function App() {
@@ -144,6 +145,7 @@ function App() {
       <DialogBox />
       <PressableButton />
       <ChangeStatusBar />
+      <PlatformDetails />
     </ScrollView>
   );
 }
