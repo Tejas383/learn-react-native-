@@ -19,6 +19,7 @@ import DialogBox from './components/DialogBox';
 import PressableButton from './components/PressableButton';
 import ChangeStatusBar from './components/ChangeStatusBar';
 import PlatformDetails from './components/PlatformDetails';
+import Packages from './components/Packages';
 import exStyles from './style';
 
 function App() {
@@ -146,6 +147,7 @@ function App() {
       <PressableButton />
       <ChangeStatusBar />
       <PlatformDetails />
+      <Packages />
     </ScrollView>
   );
 }
