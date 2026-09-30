@@ -2,8 +2,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Button, Text, View } from 'react-native';
+import Home from './Home';
+import Login from './Login';
 
 const Stack = createNativeStackNavigator();
+
+const leftButton = () => {
+  return (
+    <Button
+      title="left"
+      onPress={() => {
+        console.warn('left button clicked');
+      }}
+    />
+  );
+};
 
 const StackNavigation = () => {
   return (
@@ -32,7 +45,7 @@ const StackNavigation = () => {
                 }}
               />
             ),
-            headerLeft: rightButton,
+            headerLeft: leftButton,
             title: 'USER LOGIN',
             headerStyle: {
               backgroundColor: 'magenta',
@@ -47,37 +60,6 @@ const StackNavigation = () => {
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
-
-const rightButton = () => {
-  return (
-    <Button
-      title="left"
-      onPress={() => {
-        console.warn('left button clicked');
-      }}
-    />
-  );
-};
-
-const Home = () => {
-  return (
-    <View>
-      <Text style={{ fontSize: 30 }}>Home Page</Text>
-    </View>
-  );
-};
-
-const Login = props => {
-  return (
-    <View>
-      <Text style={{ fontSize: 30 }}>Login Page</Text>
-      <Button
-        title="go to home page"
-        onPress={() => props.navigation.navigate('Home')}
-      />
-    </View>
   );
 };
 
