@@ -17,6 +17,7 @@ import DynamicRadioButton from './components/DynamicRadioButton';
 import LoadingState from './components/LoadingState';
 import DialogBox from './components/DialogBox';
 import PressableButton from './components/PressableButton';
+import ChangeStatusBar from './components/ChangeStatusBar';
 import exStyles from './style';
 
 function App() {
@@ -142,6 +143,7 @@ function App() {
       <LoadingState />
       <DialogBox />
       <PressableButton />
+      <ChangeStatusBar />
     </ScrollView>
   );
 }
