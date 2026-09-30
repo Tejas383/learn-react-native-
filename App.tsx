@@ -29,6 +29,7 @@ import PlatformDetails from './components/PlatformDetails';
 import Packages from './components/Packages';
 import CustomModal from './components/CustomModal';
 import StackNavigation from './components/StackNavigation';
+import TabNavigation from './components/TabNavigation';
 import exStyles from './style';
 
 function App() {
@@ -168,7 +169,8 @@ function App() {
   //   </View>
   // );
 
-  return <StackNavigation />;
+  // return <StackNavigation />;
+  return <TabNavigation />;
 }
 
 // internal style
