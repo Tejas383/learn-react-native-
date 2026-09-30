@@ -24,6 +24,15 @@ const StackNavigation = () => {
           name="Login"
           component={Login}
           options={{
+            headerRight: () => (
+              <Button
+                title="right"
+                onPress={() => {
+                  console.warn('right button clicked');
+                }}
+              />
+            ),
+            headerLeft: rightButton,
             title: 'USER LOGIN',
             headerStyle: {
               backgroundColor: 'magenta',
@@ -32,11 +41,23 @@ const StackNavigation = () => {
             headerTitleStyle: {
               fontSize: 25,
             },
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
+  );
+};
+
+const rightButton = () => {
+  return (
+    <Button
+      title="left"
+      onPress={() => {
+        console.warn('left button clicked');
+      }}
+    />
   );
 };
 
