@@ -28,6 +28,7 @@ import ChangeStatusBar from './components/ChangeStatusBar';
 import PlatformDetails from './components/PlatformDetails';
 import Packages from './components/Packages';
 import CustomModal from './components/CustomModal';
+import StackNavigation from './components/StackNavigation';
 import exStyles from './style';
 
 function App() {
@@ -57,110 +58,117 @@ function App() {
 
   const [inputName, setInputName] = useState('');
 
-  return (
-    <View>
-      <ScrollView style={{ marginBottom: 80 }}>
-        <Text style={{ fontSize: 30 }}>Hello from react native</Text>
-        <Button title="Press me" />
-        <Button title="Press me too" />
-        <Text style={{ fontSize: 15 }}>{name}</Text>
-        <Text style={{ fontSize: 15 }}>{age}</Text>
-        <Text style={{ fontSize: 15 }}>{email}</Text>
-        <Text style={{ fontSize: 15 }}>{fruit()}</Text>
-        <Text style={{ fontSize: 15 }}>{10 * 50}</Text>
-        <Text style={{ fontSize: 15 }}>
-          {age > 18 ? 'adult' : 'anauthorised'}
-        </Text>
+  // return (
+  //   <View>
+  //     <ScrollView style={{ marginBottom: 80 }}>
+  //       <Text style={{ fontSize: 30 }}>Hello from react native</Text>
+  //       <Button title="Press me" />
+  //       <Button title="Press me too" />
+  //       <Text style={{ fontSize: 15 }}>{name}</Text>
+  //       <Text style={{ fontSize: 15 }}>{age}</Text>
+  //       <Text style={{ fontSize: 15 }}>{email}</Text>
+  //       <Text style={{ fontSize: 15 }}>{fruit()}</Text>
+  //       <Text style={{ fontSize: 15 }}>{10 * 50}</Text>
+  //       <Text style={{ fontSize: 15 }}>
+  //         {age > 18 ? 'adult' : 'anauthorised'}
+  //       </Text>
 
-        <Text style={{ fontSize: 30 }}>Components</Text>
-        <UserData />
+  //       <Text style={{ fontSize: 30 }}>Components</Text>
+  //       <UserData />
 
-        {/* if we want to pass the params */}
-        <Button color={'green'} title="On Press 1" onPress={press} />
-        {/* if we donot want to pass the params */}
-        <Button
-          color={'red'}
-          title="On Press 2"
-          onPress={() => press('helloooo')}
-        />
+  //       {/* if we want to pass the params */}
+  //       <Button color={'green'} title="On Press 1" onPress={press} />
+  //       {/* if we donot want to pass the params */}
+  //       <Button
+  //         color={'red'}
+  //         title="On Press 2"
+  //         onPress={() => press('helloooo')}
+  //       />
 
-        <Text>{data}</Text>
-        <Text>{data2}</Text>
-        <Button title="update name" onPress={update} />
+  //       <Text>{data}</Text>
+  //       <Text>{data2}</Text>
+  //       <Button title="update name" onPress={update} />
 
-        {/* props */}
-        <Text style={{ fontSize: 30 }}>Props</Text>
-        <User name={name1} age={age1} />
-        <Button title="update name" onPress={() => setname1('peter')} />
+  //       {/* props */}
+  //       <Text style={{ fontSize: 30 }}>Props</Text>
+  //       <User name={name1} age={age1} />
+  //       <Button title="update name" onPress={() => setname1('peter')} />
 
-        {/* inline style */}
-        <Text style={{ fontSize: 30, color: 'red', backgroundColor: 'green' }}>
-          Styles in react-native
-        </Text>
-        {/* external style */}
-        <Text style={exStyles.textBox}>Styles in react-native</Text>
-        {/* multiple styles */}
-        <Text
-          style={[
-            exStyles.textBox,
-            inStyles.textBox,
-            { backgroundColor: 'black' },
-          ]}
-        >
-          Styles in react-native
-        </Text>
-        {/* internal style */}
-        <Text style={inStyles.textBox}>Styles in react-native</Text>
-        <Text style={inStyles.textBox}>Styles in react-native</Text>
+  //       {/* inline style */}
+  //       <Text style={{ fontSize: 30, color: 'red', backgroundColor: 'green' }}>
+  //         Styles in react-native
+  //       </Text>
+  //       {/* external style */}
+  //       <Text style={exStyles.textBox}>Styles in react-native</Text>
+  //       {/* multiple styles */}
+  //       <Text
+  //         style={[
+  //           exStyles.textBox,
+  //           inStyles.textBox,
+  //           { backgroundColor: 'black' },
+  //         ]}
+  //       >
+  //         Styles in react-native
+  //       </Text>
+  //       {/* internal style */}
+  //       <Text style={inStyles.textBox}>Styles in react-native</Text>
+  //       <Text style={inStyles.textBox}>Styles in react-native</Text>
 
-        {/* handling text input */}
-        <Text style={{ fontSize: 40 }}>Handle Text Input</Text>
-        <Text>Entered name is : {inputName}</Text>
-        <TextInput
-          placeholder="enter your name"
-          style={{
-            borderRadius: 5,
-            borderColor: 'black',
-            borderWidth: 2,
-            padding: 5,
-            margin: 5,
-          }}
-          value={inputName}
-          onChangeText={text => setInputName(text)}
-        />
-        <Button title="clear text input" onPress={() => setInputName('')} />
+  //       {/* handling text input */}
+  //       <Text style={{ fontSize: 40 }}>Handle Text Input</Text>
+  //       <Text>Entered name is : {inputName}</Text>
+  //       <TextInput
+  //         placeholder="enter your name"
+  //         style={{
+  //           borderRadius: 5,
+  //           borderColor: 'black',
+  //           borderWidth: 2,
+  //           padding: 5,
+  //           margin: 5,
+  //         }}
+  //         value={inputName}
+  //         onChangeText={text => setInputName(text)}
+  //       />
+  //       <Button title="clear text input" onPress={() => setInputName('')} />
 
-        <Form />
+  //       <Form />
 
-        <ListWithFlatList />
+  //       <ListWithFlatList />
 
-        <StaticGrid />
-        <DynamicGrid />
+  //       <StaticGrid />
+  //       <DynamicGrid />
 
-        <ComponentWithLoop />
+  //       <ComponentWithLoop />
 
-        <ListWithSectionList />
+  //       <ListWithSectionList />
 
-        <UseEffectHook />
-        <ShowHideComponent />
+  //       <UseEffectHook />
+  //       <ShowHideComponent />
 
-        <ResponsiveUIusingFlex />
+  //       <ResponsiveUIusingFlex />
 
-        <StyleWithButton />
-        <Text style={{ fontSize: 40 }}>Static Radio Button</Text>
-        <StaticRadioButton />
-        <DynamicRadioButton />
+  //       <StyleWithButton />
+  //       <Text style={{ fontSize: 40 }}>Static Radio Button</Text>
+  //       <StaticRadioButton />
+  //       <DynamicRadioButton />
 
-        <LoadingState />
-        <DialogBox />
-        <PressableButton />
-        <ChangeStatusBar />
-        <PlatformDetails />
-        <Packages />
-      </ScrollView>
-      <CustomModal />
-    </View>
-  );
+  //       <LoadingState />
+  //       <DialogBox />
+  //       <PressableButton />
+  //       <ChangeStatusBar />
+  //       <PlatformDetails />
+  //       <Packages />
+
+  //       <Text style={{ fontSize: 50 }}>Navigation</Text>
+  //       {/* bun add @react-navigation/native */}
+  //       {/* bun add react-native-screens react-native-safe-area-context */}
+  //       <StackNavigation />
+  //     </ScrollView>
+  //     <CustomModal />
+  //   </View>
+  // );
+
+  return <StackNavigation />;
 }
 
 // internal style
