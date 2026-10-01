@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import ShowUsers from './ShowUsers';
+import UsersList from './UsersList';
 
 const APIForm = () => {
   const [name, setName] = useState('');
@@ -20,6 +20,7 @@ const APIForm = () => {
     console.warn(result);
 
     clearDetails();
+    getData();
   };
 
   const getData = async () => {
@@ -66,7 +67,7 @@ const APIForm = () => {
         <Button title="add data" onPress={saveData} />
       </View>
 
-      <ShowUsers data={data} />
+      <UsersList data={data} getData={getData} />
     </View>
   );
 };
