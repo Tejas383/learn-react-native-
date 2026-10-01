@@ -33,6 +33,7 @@ import TabNavigation from './components/TabNavigation';
 import API from './components/API';
 import PostAPI from './components/PostAPI';
 import APIForm from './components/APIForm';
+import FormValidation from './components/FormValidation';
 import exStyles from './style';
 
 function App() {
@@ -180,6 +181,8 @@ function App() {
       <API />
       {/* <PostAPI /> */}
       <APIForm />
+
+      <FormValidation />
     </ScrollView>
   );
 }
