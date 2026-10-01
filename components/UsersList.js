@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, StyleSheet, Text, TextInput, View } from 'react-native';
+import SearchUser from './SearchUser';
 
-const ShowUsers = ({ data, getData }) => {
+const UsersList = ({ data, getData, setData }) => {
   const deleteUser = async id => {
     let result = await fetch(`http://10.0.2.2:3000/users/${id}`, {
       method: 'DELETE',
@@ -40,25 +41,29 @@ const ShowUsers = ({ data, getData }) => {
   return (
     <View style={styles.main}>
       <Text style={styles.header}>User Details</Text>
+
+      <SearchUser setData={setData} />
+
       <View style={styles.container}>
-        {data.length &&
-          data.map(item => (
-            <View style={styles.usersList}>
-              <Text style={styles.text}>{item.name}</Text>
-              <Text style={styles.text}>{item.age}</Text>
-              {/* <Text style={styles.text}>{item.email}</Text> */}
-              <Button
-                title="delete"
-                color={'red'}
-                onPress={() => deleteUser(item.id)}
-              />
-              <Button
-                title="update"
-                color={'green'}
-                onPress={() => updateUser(item)}
-              />
-            </View>
-          ))}
+        {data.length > 0
+          ? data.map(item => (
+              <View style={styles.usersList}>
+                <Text style={styles.text}>{item.name}</Text>
+                <Text style={styles.text}>{item.age}</Text>
+                {/* <Text style={styles.text}>{item.email}</Text> */}
+                <Button
+                  title="delete"
+                  color={'red'}
+                  onPress={() => deleteUser(item.id)}
+                />
+                <Button
+                  title="update"
+                  color={'green'}
+                  onPress={() => updateUser(item)}
+                />
+              </View>
+            ))
+          : null}
 
         <Modal transparent={true} visible={show} animationType="slide">
           <View style={styles.mainModal}>
@@ -154,4 +159,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ShowUsers;
+export default UsersList;

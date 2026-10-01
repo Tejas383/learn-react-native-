@@ -67,7 +67,7 @@ const APIForm = () => {
         <Button title="add data" onPress={saveData} />
       </View>
 
-      <UsersList data={data} getData={getData} />
+      <UsersList data={data} getData={getData} setData={setData} />
     </View>
   );
 };
