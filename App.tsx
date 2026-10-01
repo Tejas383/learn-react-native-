@@ -178,11 +178,10 @@ function App() {
 
   return (
     <ScrollView>
-      <API />
+      {/* <API /> */}
+      {/* <FormValidation /> */}
       {/* <PostAPI /> */}
       <APIForm />
-
-      <FormValidation />
     </ScrollView>
   );
 }
