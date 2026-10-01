@@ -14,7 +14,7 @@ const API = () => {
     getAPIData1();
   }, []);
 
-  const [data2, setData2] = useState('');
+  const [data2, setData2] = useState([]);
 
   const getAPIData2 = async () => {
     let result = await fetch('https://jsonplaceholder.typicode.com/posts');
