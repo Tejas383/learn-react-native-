@@ -30,6 +30,7 @@ import Packages from './components/Packages';
 import CustomModal from './components/CustomModal';
 import StackNavigation from './components/StackNavigation';
 import TabNavigation from './components/TabNavigation';
+import API from './components/API';
 import exStyles from './style';
 
 function App() {
@@ -170,7 +171,9 @@ function App() {
   // );
 
   // return <StackNavigation />;
-  return <TabNavigation />;
+  // return <TabNavigation />;
+
+  return <API />;
 }
 
 // internal style
