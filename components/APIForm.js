@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import UsersList from './UsersList';
 
@@ -8,6 +8,8 @@ const APIForm = () => {
   const [email, setEmail] = useState('');
 
   const [data, setData] = useState([]);
+
+  const input = useRef();
 
   const saveData = async () => {
     let result = await fetch('http://10.0.2.2:3000/users', {
@@ -21,6 +23,8 @@ const APIForm = () => {
 
     clearDetails();
     getData();
+
+    input.current.focus();
   };
 
   const getData = async () => {
@@ -51,6 +55,7 @@ const APIForm = () => {
           onChangeText={text => setName(text)}
           value={name}
           style={styles.input}
+          ref={input}
         />
         <TextInput
           placeholder="enter age"
